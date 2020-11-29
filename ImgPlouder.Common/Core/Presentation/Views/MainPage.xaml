@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:FontAwesome"
+             x:Class="ImgPlouder.Common.Core.Presentation.Views.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <NavigationPage.TitleView>
+        <Label Text="ImgPlouder" Style="{DynamicResource Title}" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontFamily="Brightside" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <CollectionView IsVisible="false">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+
+                </CollectionView>
+                <StackLayout x:Name="ErrorLayout" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="false">
+                    <Label x:Name="ErrorTitle" FontSize="18" FontAttributes="Bold" Margin="10" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label x:Name="ErrorMessage" FontSize="14" Margin="5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout x:Name="ProgressLayout" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
+                    <Frame HasShadow="False" BackgroundColor="Transparent">
+                        <StackLayout>
+                            <Label Text="{Static fontawesome:FontAwesomeIcons.Plus}" FontFamily="FontAwesomeSolid" HorizontalTextAlignment="Center" />
+                            <Label Text="Tap for Add Images" HorizontalTextAlignment="Center" FontAttributes="Italic"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button x:Name="bUpload" Text="Upload!" Padding="20" IsEnabled="False" HorizontalOptions="FillAndExpand" BackgroundColor="{DynamicResource FrameColor}" TextColor="{DynamicResource BackgroundColor}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
