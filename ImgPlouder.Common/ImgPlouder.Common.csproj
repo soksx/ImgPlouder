@@ -22,6 +22,8 @@
     <Folder Include="Core\Domain\" />
     <Folder Include="Core\Presentation\" />
     <Folder Include="Core\Presentation\Views\" />
+    <Folder Include="Core\Domain\Models\" />
+    <Folder Include="Core\Domain\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Fonts\Brightside.ttf" />
